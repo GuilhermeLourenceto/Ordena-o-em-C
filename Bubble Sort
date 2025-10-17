@@ -1,9 +1,9 @@
-void bubbleSort( int v[], int n ) {
-    for ( int i = 0 ; i < n - 1 ; i++ )
-        for ( int j = 0 ; j < n - i - 1 ; j++ )
-            if ( v[j] > v[j + 1] ) {
-                int t = v[j];
-                v[j] = v[j + 1];
-                v[j + 1] = t;
+void bubbleSort( int vetor[], int tamanho_vetor ) {
+    for ( int i = 0 ; i < tamanho_vetor - 1 ; i++ )
+        for ( int j = 0 ; j < tamanho_vetor - i - 1 ; j++ )
+            if ( vetor[j] > vetor[j + 1] ) {
+                int temporario = vetor[j];
+                vetor[j] = vetor[j + 1];
+                vetor[j + 1] = temporario;
             }
 }
