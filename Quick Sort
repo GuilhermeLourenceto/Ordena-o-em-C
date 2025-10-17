@@ -1,0 +1,26 @@
+int particionar( int vetor[], int inicio, int fim ) {
+    int pivo = vetor[fim];
+    int indice_pivo = inicio;
+    int temporario;
+
+    for ( int j = inicio ; j < fim ; j++ )
+        if ( vetor[j] < pivo ) {
+            temporario = vetor[j];
+            vetor[j] = vetor[indice_pivo];
+            vetor[indice_pivo++] = temporario;
+        }
+
+    temporario = vetor[indice_pivo];
+    vetor[indice_pivo] = vetor[fim];
+    vetor[fim] = temporario;
+
+    return indice_pivo;
+}
+
+void quickSort( int vetor[], int inicio, int fim ) {
+    if ( inicio < fim ) {
+        int indice_pivo = particionar( vetor, inicio, fim );
+        quickSort( vetor, inicio, indice_pivo - 1 );
+        quickSort( vetor, indice_pivo + 1, fim );
+    }
+}
